@@ -1,1 +1,3 @@
 # ReTris
+
+Open source game

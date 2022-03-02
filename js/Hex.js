@@ -1,4 +1,4 @@
-function Hex(sideLength) {
+function Hex(sideLength, sides) {
 	this.playThrough = 0;
 	this.fillColor = [44,62,80];
 	this.tempColor = [44,62,80];
@@ -6,7 +6,7 @@ function Hex(sideLength) {
 	this.position = 0;
 	this.dy = 0;
 	this.dt = 1;
-	this.sides = 6;
+	this.sides = sides;
 	this.blocks = [];
 	this.angle = 180 / this.sides;
 	this.targetAngle = this.angle;
@@ -126,11 +126,11 @@ function Hex(sideLength) {
 		this.position = this.position % this.sides;
 		this.blocks.forEach(function(blocks) {
 			blocks.forEach(function(block) {
-				block.targetAngle = block.targetAngle - steps * 60;
+				block.targetAngle = block.targetAngle - steps * 120; //CHANGE FOR ANGLE 60
 			});
 		});
 
-		this.targetAngle = this.targetAngle - steps * 60;
+		this.targetAngle = this.targetAngle - steps * 120; //CHANGE FOR ANGLE 60
 				this.lastRotate = Date.now();
 	};
 
@@ -161,7 +161,8 @@ function Hex(sideLength) {
 			this.angle += this.angularVelocity;
 		}
  
-		drawPolygon(this.x + gdx, this.y + gdy + this.dy, this.sides, this.sideLength, this.angle,arrayToColor(this.fillColor) , 0, 'rgba(0,0,0,0)');
+		drawPolygon(this.x + gdx, this.y + gdy + this.dy, this.sides, this.sideLength + 75, this.angle,arrayToColor(this.fillColor) , 0, 'rgba(0,0,0,0)');
+		//CHANGE this.sideLength added 75
 	};
 }
 

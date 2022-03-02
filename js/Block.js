@@ -5,9 +5,9 @@ function Block(fallingLane, color, iter, distFromHex, settled) {
 	//the lane which the block was shot from
 	this.fallingLane = fallingLane;
 
-		this.checked=0;
+	this.checked=0;
 	//the angle at which the block falls
-	this.angle = 90 - (30 + 60 * fallingLane);
+	this.angle = 90 - (30 + 120 * fallingLane); //CHANGE FROM 60 to 120
 	//for calculating the rotation of blocks attached to the center hex
 	this.angularVelocity = 0;
 	this.targetAngle = this.angle;
@@ -93,8 +93,8 @@ function Block(fallingLane, color, iter, distFromHex, settled) {
 			this.angle += this.angularVelocity;
 		}
 		
-		this.width = 2 * this.distFromHex / Math.sqrt(3);
-		this.widthWide = 2 * (this.distFromHex + this.height) / Math.sqrt(3);
+		this.width = 6 * this.distFromHex / Math.sqrt(3); //CHANGE 2 to 6
+		this.widthWide = 5 * (this.distFromHex + this.height) / Math.sqrt(3); //CHANGE 2 TO 5
 		//this.widthWide = this.width + this.height + 3;
 		var p1;
 		var p2;

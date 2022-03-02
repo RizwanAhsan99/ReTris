@@ -126,13 +126,17 @@ function init(b) {
 	tweetblock=false;
 	scoreOpacity = 0;
 	gameState = 1;
+
+	//NUMBER OF SIDES FOR THE MAIN SHAPE
+	var sides = 3;
+	
 	$("#restartBtn").hide();
 	$("#pauseBtn").show();
 	if (saveState.hex !== undefined) gameState = 1;
 
 	settings.blockHeight = settings.baseBlockHeight * settings.scale;
 	settings.hexWidth = settings.baseHexWidth * settings.scale;
-	MainHex = saveState.hex || new Hex(settings.hexWidth);
+	MainHex = saveState.hex || new Hex(settings.hexWidth, sides);
 	if (saveState.hex) {
 		MainHex.playThrough += 1;
 	}

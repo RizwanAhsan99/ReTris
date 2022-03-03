@@ -58,8 +58,12 @@ function Hex(sideLength, sides) {
     lane += this.position;
     lane = (lane + this.sides) % this.sides;
     block.distFromHex =
-      (MainHex.sideLength / 2) * Math.sqrt(3) +
+      (MainHex.sideLength / 3) * Math.sqrt(2) +
       block.height * this.blocks[lane].length;
+    // CHANGE
+    //   block.distFromHex =
+    //   (MainHex.sideLength / 2) * Math.sqrt(3) +
+    //   block.height * this.blocks[lane].length;
     this.blocks[lane].push(block);
     block.attachedLane = lane;
     block.checked = 1;
@@ -76,10 +80,17 @@ function Hex(sideLength, sides) {
         if (
           block.distFromHex -
             block.iter * this.dt * settings.scale -
-            (this.sideLength / 2) * Math.sqrt(3) <=
+            (this.sideLength / 3) * Math.sqrt(2) <=
           0
+          // CHANGE
+          //   block.distFromHex -
+          //     block.iter * this.dt * settings.scale -
+          //     (this.sideLength / 2) * Math.sqrt(3) <=
+          //   0
         ) {
-          block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
+          block.distFromHex = (this.sideLength / 3) * Math.sqrt(2);
+          // CHANGE
+          // block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
           block.settled = 1;
           block.checked = 1;
         } else {
@@ -205,13 +216,12 @@ function Hex(sideLength, sides) {
       this.x + gdx,
       this.y + gdy + this.dy,
       this.sides,
-      this.sideLength + 75,
+      this.sideLength, //CHANGE this.sideLength added 75
       this.angle,
       arrayToColor(this.fillColor),
       0,
       "rgba(0,0,0,0)"
     );
-    //CHANGE this.sideLength added 75
   };
 }
 

@@ -88,9 +88,9 @@ function initialize(a) {
       prevScale: 1,
       hexWidth: 65,
       baseHexWidth: 87,
-      baseBlockHeight: 20,
+      baseBlockHeight: 15, //CHANGE from 20 to 15
       blockHeight: 15,
-      rows: 8,
+      rows: 7, //CHANGE from 8 to 7
       speedModifier: 0.65,
       speedUpKeyHeld: false,
       creationSpeedModifier: 0.65,

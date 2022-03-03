@@ -19,15 +19,15 @@ function render() {
     drawPolygon(
       trueCanvas.width / 2,
       trueCanvas.height / 2,
-      6,
-      settings.rows * settings.blockHeight * (2 / Math.sqrt(3)) +
-        settings.hexWidth,
-      30,
+      3, //CHANGE from 6 to 3
+      12 * settings.blockHeight * (2 / Math.sqrt(3)) + settings.hexWidth,
+      // CHANGE settings.rows * settings.blockHeight * (2 / Math.sqrt(3)) + settings.hexWidth,
+      180, //CHANGE from 30 to 180
       grey,
       false,
       6
     );
-    drawTimer();
+    // drawTimer(); //CHANGE Draws the circle around box when scoring
     ctx.globalAlpha = 1;
   }
 

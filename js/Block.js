@@ -100,8 +100,11 @@ function Block(fallingLane, color, iter, distFromHex, settled) {
       this.angle += this.angularVelocity;
     }
 
-    this.width = (6 * this.distFromHex) / Math.sqrt(3); //CHANGE 2 to 6
-    this.widthWide = (5 * (this.distFromHex + this.height)) / Math.sqrt(3); //CHANGE 2 TO 5
+    this.width = (5 * this.distFromHex) / Math.sqrt(2);
+    //CHANGE this.width = (2 * this.distFromHex) / Math.sqrt(3);
+    this.widthWide = (5 * (this.distFromHex + this.height)) / Math.sqrt(2);
+    //CHANGE this.widthWide = (2 * (this.distFromHex + this.height)) / Math.sqrt(3);
+
     //this.widthWide = this.width + this.height + 3;
     var p1;
     var p2;

@@ -53,7 +53,7 @@ function drawScoreboard() {
       trueCanvas.height / 2.1 + gdy - 155 * settings.scale,
       150,
       "#2c3e50",
-      "Hextris"
+      "ReTris"
     );
     renderText(
       trueCanvas.width / 2 + gdx + 5 * settings.scale,
@@ -77,7 +77,7 @@ function drawScoreboard() {
       trueCanvas.height / 2 + gdy - 155 * settings.scale,
       150,
       "#2c3e50",
-      "Hextris"
+      "ReTris"
     );
     renderText(
       trueCanvas.width / 2 + gdx + 5 * settings.scale,

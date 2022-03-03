@@ -18,6 +18,8 @@ function Block(
   this.checked = 0;
   //the angle at which the block falls
   this.angle = 90 - (shapeAngle + shapeAngle2 * fallingLane); //CHANGE FROM 60 to 120
+  this.shapeWidth = shapeWidth;
+  this.shapeWidthSq = shapeWidthSq;
   //for calculating the rotation of blocks attached to the center hex
   this.angularVelocity = 0;
   this.targetAngle = this.angle;
@@ -110,10 +112,12 @@ function Block(
       this.angle += this.angularVelocity;
     }
 
-    this.width = (shapeWidth * this.distFromHex) / Math.sqrt(shapeWidthSq);
+    this.width =
+      (this.shapeWidth * this.distFromHex) / Math.sqrt(this.shapeWidthSq);
     //CHANGE this.width = (2 * this.distFromHex) / Math.sqrt(3);
     this.widthWide =
-      (shapeWidth * (this.distFromHex + this.height)) / Math.sqrt(shapeWidthSq);
+      (this.shapeWidth * (this.distFromHex + this.height)) /
+      Math.sqrt(this.shapeWidthSq);
     //CHANGE this.widthWide = (2 * (this.distFromHex + this.height)) / Math.sqrt(3);
 
     //this.widthWide = this.width + this.height + 3;

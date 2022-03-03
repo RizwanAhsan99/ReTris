@@ -215,7 +215,16 @@ function hexShape() {
     blockWidthSquare: 2.5,
   };
 
-  return square;
+  var pentagon = {
+    sides: 5,
+    angles: 145,
+    blockAngle: 72,
+    blockAngle2: 72,
+    blockWidth: 3.25,
+    blockWidthSquare: 2.5,
+  };
+
+  return triangle;
 }
 
 function addNewBlock(blocklane, color, iter, distFromHex, settled) {

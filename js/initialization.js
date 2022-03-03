@@ -146,7 +146,6 @@ function initialize(a) {
   window.startTime = undefined;
   window.gameState;
   setStartScreen();
-
   if (a != 1) {
     window.canRestart = 1;
     window.onblur = function (e) {

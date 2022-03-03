@@ -216,7 +216,7 @@ function Hex(sideLength, sides, hexAngle) {
       this.x + gdx,
       this.y + gdy + this.dy,
       this.sides,
-      this.sideLength, //CHANGE this.sideLength added 75
+      this.sideLength - 25, //CHANGE this.sideLength added 75
       this.angle,
       arrayToColor(this.fillColor),
       0,

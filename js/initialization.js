@@ -90,7 +90,7 @@ function initialize(a) {
       baseHexWidth: 87,
       baseBlockHeight: 20, //CHANGE from 20 to 15
       blockHeight: 15,
-      rows: 7, //CHANGE from 8 to 7
+      rows: hexShape().rows, //CHANGE from 8 to 7
       speedModifier: 0.65,
       speedUpKeyHeld: false,
       creationSpeedModifier: 0.65,

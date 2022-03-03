@@ -204,6 +204,9 @@ function hexShape() {
     blockAngle2: 120,
     blockWidth: 5,
     blockWidthSquare: 2,
+    theta: 180,
+    offset: 0,
+    rows: 7,
   };
 
   var square = {
@@ -213,18 +216,36 @@ function hexShape() {
     blockAngle2: 90,
     blockWidth: 3.25,
     blockWidthSquare: 2.5,
+    theta: 45,
+    offset: 25,
+    rows: 8,
   };
 
   var pentagon = {
     sides: 5,
-    angles: 145,
-    blockAngle: 72,
+    angles: 72,
+    blockAngle: 270,
     blockAngle2: 72,
-    blockWidth: 3.25,
-    blockWidthSquare: 2.5,
+    blockWidth: 1.75,
+    blockWidthSquare: 1.4,
+    theta: 252,
+    offset: 0,
+    rows: 8,
   };
 
-  return triangle;
+  var hexagon = {
+    sides: 6,
+    angles: 60,
+    blockAngle: 30,
+    blockAngle2: 60,
+    blockWidth: 2,
+    blockWidthSquare: 3,
+    theta: 30,
+    offset: 0,
+    rows: 8,
+  };
+
+  return pentagon;
 }
 
 function addNewBlock(blocklane, color, iter, distFromHex, settled) {

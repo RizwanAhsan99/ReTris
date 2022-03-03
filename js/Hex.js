@@ -58,7 +58,7 @@ function Hex(sideLength, sides, hexAngle) {
     lane += this.position;
     lane = (lane + this.sides) % this.sides;
     block.distFromHex =
-      (MainHex.sideLength / 3) * Math.sqrt(2) +
+      (MainHex.sideLength / 2) * Math.sqrt(3) +
       block.height * this.blocks[lane].length;
     // CHANGE
     //   block.distFromHex =
@@ -80,7 +80,7 @@ function Hex(sideLength, sides, hexAngle) {
         if (
           block.distFromHex -
             block.iter * this.dt * settings.scale -
-            (this.sideLength / 3) * Math.sqrt(2) <=
+            (this.sideLength / 2) * Math.sqrt(3) <=
           0
           // CHANGE
           //   block.distFromHex -
@@ -88,7 +88,7 @@ function Hex(sideLength, sides, hexAngle) {
           //     (this.sideLength / 2) * Math.sqrt(3) <=
           //   0
         ) {
-          block.distFromHex = (this.sideLength / 3) * Math.sqrt(2);
+          block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
           // CHANGE
           // block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
           block.settled = 1;
@@ -216,7 +216,7 @@ function Hex(sideLength, sides, hexAngle) {
       this.x + gdx,
       this.y + gdy + this.dy,
       this.sides,
-      this.sideLength - 25, //CHANGE this.sideLength added 75
+      this.sideLength - hexShape().offset, //CHANGE this.sideLength added 75
       this.angle,
       arrayToColor(this.fillColor),
       0,

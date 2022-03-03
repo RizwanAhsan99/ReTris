@@ -19,10 +19,10 @@ function render() {
     drawPolygon(
       trueCanvas.width / 2,
       trueCanvas.height / 2,
-      4, //CHANGE from 6 to 3
+      hexShape().sides, //CHANGE from 6 to 3
       12 * settings.blockHeight * (2 / Math.sqrt(3)) + settings.hexWidth,
       // CHANGE settings.rows * settings.blockHeight * (2 / Math.sqrt(3)) + settings.hexWidth,
-      45, //CHANGE from 30 to 180
+      hexShape().theta, //CHANGE from 30 to 180
       grey,
       false,
       6

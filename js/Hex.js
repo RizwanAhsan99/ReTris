@@ -1,4 +1,4 @@
-function Hex(sideLength, sides) {
+function Hex(sideLength, sides, hexAngle) {
   this.playThrough = 0;
   this.fillColor = [44, 62, 80];
   this.tempColor = [44, 62, 80];
@@ -175,11 +175,11 @@ function Hex(sideLength, sides) {
     this.position = this.position % this.sides;
     this.blocks.forEach(function (blocks) {
       blocks.forEach(function (block) {
-        block.targetAngle = block.targetAngle - steps * 120; //CHANGE FOR ANGLE 60
+        block.targetAngle = block.targetAngle - steps * hexAngle; //CHANGE FOR ANGLE 60
       });
     });
 
-    this.targetAngle = this.targetAngle - steps * 120; //CHANGE FOR ANGLE 60
+    this.targetAngle = this.targetAngle - steps * hexAngle; //CHANGE FOR ANGLE 60
     this.lastRotate = Date.now();
   };
 

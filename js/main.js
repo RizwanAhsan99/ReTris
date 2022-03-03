@@ -134,7 +134,8 @@ function init(b) {
   gameState = 1;
 
   //NUMBER OF SIDES FOR THE MAIN SHAPE
-  var sides = 3;
+
+  var sides = hexShape().sides;
 
   $("#restartBtn").hide();
   $("#pauseBtn").show();
@@ -142,7 +143,8 @@ function init(b) {
 
   settings.blockHeight = settings.baseBlockHeight * settings.scale;
   settings.hexWidth = settings.baseHexWidth * settings.scale;
-  MainHex = saveState.hex || new Hex(settings.hexWidth, sides);
+  MainHex =
+    saveState.hex || new Hex(settings.hexWidth, sides, hexShape().angles);
   if (saveState.hex) {
     MainHex.playThrough += 1;
   }
@@ -194,6 +196,28 @@ function init(b) {
   hideText();
 }
 
+function hexShape() {
+  var triangle = {
+    sides: 3,
+    angles: 120,
+    blockAngle: 30,
+    blockAngle2: 120,
+    blockWidth: 5,
+    blockWidthSquare: 2,
+  };
+
+  var square = {
+    sides: 4,
+    angles: 90,
+    blockAngle: 90,
+    blockAngle2: 90,
+    blockWidth: 3.25,
+    blockWidthSquare: 2.5,
+  };
+
+  return square;
+}
+
 function addNewBlock(blocklane, color, iter, distFromHex, settled) {
   //last two are optional parameters
   iter *= settings.speedModifier;
@@ -213,7 +237,19 @@ function addNewBlock(blocklane, color, iter, distFromHex, settled) {
   if (settled) {
     blockHist[MainHex.ct].settled = settled;
   }
-  blocks.push(new Block(blocklane, color, iter, distFromHex, settled));
+  blocks.push(
+    new Block(
+      blocklane,
+      color,
+      iter,
+      distFromHex,
+      settled,
+      hexShape().blockAngle,
+      hexShape().blockAngle2,
+      hexShape().blockWidth,
+      hexShape().blockWidthSquare
+    )
+  );
 }
 
 function exportHistory() {

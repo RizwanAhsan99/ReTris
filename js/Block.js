@@ -1,4 +1,14 @@
-function Block(fallingLane, color, iter, distFromHex, settled) {
+function Block(
+  fallingLane,
+  color,
+  iter,
+  distFromHex,
+  settled,
+  shapeAngle,
+  shapeAngle2,
+  shapeWidth,
+  shapeWidthSq
+) {
   // whether or not a block is rested on the center hex or another block
   this.settled = settled === undefined ? 0 : 1;
   this.height = settings.blockHeight;
@@ -7,7 +17,7 @@ function Block(fallingLane, color, iter, distFromHex, settled) {
 
   this.checked = 0;
   //the angle at which the block falls
-  this.angle = 90 - (30 + 120 * fallingLane); //CHANGE FROM 60 to 120
+  this.angle = 90 - (shapeAngle + shapeAngle2 * fallingLane); //CHANGE FROM 60 to 120
   //for calculating the rotation of blocks attached to the center hex
   this.angularVelocity = 0;
   this.targetAngle = this.angle;
@@ -100,9 +110,10 @@ function Block(fallingLane, color, iter, distFromHex, settled) {
       this.angle += this.angularVelocity;
     }
 
-    this.width = (5 * this.distFromHex) / Math.sqrt(2);
+    this.width = (shapeWidth * this.distFromHex) / Math.sqrt(shapeWidthSq);
     //CHANGE this.width = (2 * this.distFromHex) / Math.sqrt(3);
-    this.widthWide = (5 * (this.distFromHex + this.height)) / Math.sqrt(2);
+    this.widthWide =
+      (shapeWidth * (this.distFromHex + this.height)) / Math.sqrt(shapeWidthSq);
     //CHANGE this.widthWide = (2 * (this.distFromHex + this.height)) / Math.sqrt(3);
 
     //this.widthWide = this.width + this.height + 3;

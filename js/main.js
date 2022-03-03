@@ -198,6 +198,7 @@ function init(b) {
 
 function hexShape() {
   var triangle = {
+    text: "triangle",
     sides: 3,
     angles: 120,
     blockAngle: 30,
@@ -207,9 +208,12 @@ function hexShape() {
     theta: 180,
     offset: 0,
     rows: 7,
+    denom: 3,
+    distSq: 2,
   };
 
   var square = {
+    text: "square",
     sides: 4,
     angles: 90,
     blockAngle: 90,
@@ -219,9 +223,12 @@ function hexShape() {
     theta: 45,
     offset: 25,
     rows: 8,
+    denom: 3,
+    distSq: 2,
   };
 
   var pentagon = {
+    text: "pentagon",
     sides: 5,
     angles: 72,
     blockAngle: 270,
@@ -231,9 +238,12 @@ function hexShape() {
     theta: 252,
     offset: 0,
     rows: 8,
+    denom: 2,
+    distSq: 2.5,
   };
 
   var hexagon = {
+    text: "hexagon",
     sides: 6,
     angles: 60,
     blockAngle: 30,
@@ -243,6 +253,8 @@ function hexShape() {
     theta: 30,
     offset: 0,
     rows: 8,
+    denom: 2,
+    distSq: 3,
   };
 
   return pentagon;

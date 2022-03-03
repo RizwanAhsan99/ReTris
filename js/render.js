@@ -102,7 +102,7 @@ function renderBeginningText() {
   } else {
     mob = false;
     input_text = "Use the right and left arrow keys";
-    action_text = "to rotate the hexagon";
+    action_text = `to rotate the ${hexShape().text}`;
     score_text = "Match 3+ blocks to score!";
     fontSize = 27;
   }

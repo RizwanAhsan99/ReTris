@@ -58,7 +58,7 @@ function Hex(sideLength, sides, hexAngle) {
     lane += this.position;
     lane = (lane + this.sides) % this.sides;
     block.distFromHex =
-      (MainHex.sideLength / 2) * Math.sqrt(3) +
+      (MainHex.sideLength / hexShape().denom) * Math.sqrt(hexShape().distSq) +
       block.height * this.blocks[lane].length;
     // CHANGE
     //   block.distFromHex =
@@ -80,7 +80,8 @@ function Hex(sideLength, sides, hexAngle) {
         if (
           block.distFromHex -
             block.iter * this.dt * settings.scale -
-            (this.sideLength / 2) * Math.sqrt(3) <=
+            (this.sideLength / hexShape().denom) *
+              Math.sqrt(hexShape().distSq) <=
           0
           // CHANGE
           //   block.distFromHex -
@@ -88,7 +89,8 @@ function Hex(sideLength, sides, hexAngle) {
           //     (this.sideLength / 2) * Math.sqrt(3) <=
           //   0
         ) {
-          block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
+          block.distFromHex =
+            (this.sideLength / hexShape().denom) * Math.sqrt(hexShape().distSq);
           // CHANGE
           // block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
           block.settled = 1;
@@ -135,13 +137,16 @@ function Hex(sideLength, sides, hexAngle) {
           this.addBlock(block);
         }
       } else {
+        //CHANGE
         if (
           block.distFromHex +
             block.iter * this.dt * settings.scale -
-            (this.sideLength / 2) * Math.sqrt(3) <=
+            (this.sideLength / hexShape().denom) *
+              Math.sqrt(hexShape().distSq) <=
           0
         ) {
-          block.distFromHex = (this.sideLength / 2) * Math.sqrt(3);
+          block.distFromHex =
+            (this.sideLength / hexShape().denom) * Math.sqrt(hexShape().distSq);
           this.addBlock(block);
         }
       }

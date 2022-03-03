@@ -174,7 +174,7 @@ function Hex(sideLength, sides, hexAngle) {
     }
 
     while (this.position < 0) {
-      this.position += 6;
+      this.position += this.sides; //CHANGE from 6
     }
 
     this.position = this.position % this.sides;

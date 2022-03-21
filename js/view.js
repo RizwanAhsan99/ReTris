@@ -257,6 +257,10 @@ function pause(o) {
   if (gameState == -1) {
     $("#fork-ribbon").fadeOut(300, "linear");
     $("#restartBtn").fadeOut(300, "linear");
+    $("#triangle").fadeOut(300, "linear");
+    $("#square").fadeOut(300, "linear");
+    $("#pentagon").fadeOut(300, "linear");
+    $("#hexagon").fadeOut(300, "linear");
     $("#buttonCont").fadeOut(300, "linear");
     if ($("#helpScreen").is(":visible")) {
       $("#helpScreen").fadeOut(300, "linear");
@@ -272,6 +276,10 @@ function pause(o) {
     }, 400);
   } else if (gameState != -2 && gameState !== 0 && gameState !== 2) {
     $("#restartBtn").fadeIn(300, "linear");
+    $("#triangle").fadeIn(300, "linear");
+    $("#square").fadeIn(300, "linear");
+    $("#pentagon").fadeIn(300, "linear");
+    $("#hexagon").fadeIn(300, "linear");
     $("#buttonCont").fadeIn(300, "linear");
     $(".helpText").fadeIn(300, "linear");
     if (message == "paused") {

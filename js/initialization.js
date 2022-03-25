@@ -373,16 +373,6 @@ function hexShape() {
     default:
       return hexagon
   }
-
-  // if (chooseShape == "triangle"){
-  //   return triangle
-  // } else if (chooseShape == "square"){
-  //   return square
-  // } else if ()
-  // else {
-  //   return hexagon;
-  // }
-
 }
 chooseShape = "hexagon"
 function triangleHandler() {
@@ -442,4 +432,9 @@ function handleClickBefore(e) {
     showHelp();
     return;
   }
+}
+
+
+module.exports = () => {
+  return 'hello';
 }

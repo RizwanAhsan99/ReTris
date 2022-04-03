@@ -184,7 +184,6 @@ function initialize(a) {
       $("#hexagon").on("mousedown", hexagonHandler);
     }
 
-
     document.addEventListener(
       "touchmove",
       function (e) {
@@ -363,38 +362,38 @@ function hexShape() {
     distSq: 3,
   };
 
-  switch(chooseShape) {
+  switch (chooseShape) {
     case "triangle":
-      return triangle
+      return triangle;
     case "square":
-      return square
+      return square;
     case "pentagon":
-      return pentagon
+      return pentagon;
     default:
-      return hexagon
+      return hexagon;
   }
 }
-chooseShape = "hexagon"
+chooseShape = "hexagon";
 function triangleHandler() {
-  chooseShape = "triangle"
+  chooseShape = "triangle";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
 }
 function squareHandler() {
-  chooseShape = "square"
+  chooseShape = "square";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
 }
 function pentagonHandler() {
-  chooseShape = "pentagon"
+  chooseShape = "pentagon";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
 }
 function hexagonHandler() {
-  chooseShape = "hexagon"
+  chooseShape = "hexagon";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
@@ -434,7 +433,6 @@ function handleClickBefore(e) {
   }
 }
 
-
 module.exports = () => {
-  return 'hello';
-}
+  return "hello";
+};

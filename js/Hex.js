@@ -132,12 +132,15 @@ function Hex(sideLength, sides, hexAngle) {
             arr[arr.length - 1].height <=
           0
         ) {
+          sfx.block.play(); //block on block
+
           block.distFromHex =
             arr[arr.length - 1].distFromHex + arr[arr.length - 1].height;
           this.addBlock(block);
         }
       } else {
         //CHANGE
+
         if (
           block.distFromHex +
             block.iter * this.dt * settings.scale -
@@ -145,6 +148,8 @@ function Hex(sideLength, sides, hexAngle) {
               Math.sqrt(hexShape().distSq) <=
           0
         ) {
+          sfx.block.play(); //block on ground
+
           block.distFromHex =
             (this.sideLength / hexShape().denom) * Math.sqrt(hexShape().distSq);
           this.addBlock(block);
@@ -154,6 +159,7 @@ function Hex(sideLength, sides, hexAngle) {
   };
 
   this.rotate = function (steps) {
+    sfx.hex.play();
     if (
       Date.now() - this.lastRotate < 75 &&
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

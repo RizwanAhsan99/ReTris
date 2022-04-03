@@ -11,7 +11,6 @@ function search(twoD, oneD) {
 function floodFill(hex, side, index, deleting) {
   if (hex.blocks[side] === undefined || hex.blocks[side][index] === undefined)
     return;
-
   //store the color
   var color = hex.blocks[side][index].color;
   //nested for loops for navigating the blocks
@@ -61,6 +60,7 @@ function consolidateBlocks(hex, side, index) {
   }
   var i;
   for (i = 0; i < deleting.length; i++) {
+    sfx.match.play(); //Matching blocks sfx
     var arr = deleting[i];
     //just making sure the arrays are as they should be
     if (arr !== undefined && arr.length == 2) {

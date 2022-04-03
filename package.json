@@ -7,7 +7,8 @@
     "test": "test"
   },
   "dependencies": {
-    "chai": "^4.3.6"
+    "chai": "^4.3.6",
+    "howler": "^2.2.3"
   },
   "devDependencies": {
     "jest": "^27.5.1",

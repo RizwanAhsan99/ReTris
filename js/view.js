@@ -240,6 +240,7 @@ function updateHighScores() {
 
 var pausable = true;
 function pause(o) {
+  TogglePauseAudio(sfx.bg);
   if (gameState == 0 || gameState == 2 || !pausable) {
     return;
   }

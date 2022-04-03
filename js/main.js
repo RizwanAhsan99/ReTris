@@ -58,6 +58,25 @@ function toggleDevTools() {
   $("#devtools").toggle();
 }
 
+var sfx = {
+  bg: new Howl({
+    src: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Tetris_theme.ogg",
+    loop: true,
+  }),
+  block: new Howl({
+    src: "https://soundimage.org/wp-content/uploads/2016/04/UI_Quirky30.mp3",
+    loop: false,
+  }),
+  hex: new Howl({
+    src: "audio/Hex2.wav",
+  }),
+  match: new Howl({
+    src: "audio/match.wav",
+  }),
+};
+
+var sfxBgID;
+
 function resumeGame() {
   gameState = 1;
   hideUIElements();
@@ -80,6 +99,18 @@ function resumeGame() {
   }, 7000);
 
   checkVisualElements(0);
+}
+paused = false;
+function TogglePauseAudio(id) {
+  if (paused) {
+    id.play(sfxBgID);
+    id.seek(saveSeek, sfxBgID);
+    paused = false;
+  } else {
+    id.pause();
+    saveSeek = id.seek(sfxBgID);
+    paused = true;
+  }
 }
 
 function checkVisualElements(arg) {
@@ -106,6 +137,7 @@ function hideUIElements() {
 }
 
 function init(b) {
+  sfxBgID = sfx.bg.play();
   if (settings.ending_block && b == 1) {
     return;
   }
@@ -365,6 +397,8 @@ function animLoop() {
         saveState = JSONfn.parse(saveState);
         gameState = 2;
 
+        sfx.bg.stop();
+
         setTimeout(function () {
           enableRestart();
         }, 150);
@@ -375,17 +409,15 @@ function animLoop() {
 
         if ($("#pauseBtn").is(":visible"))
           $("#pauseBtn").fadeOut(150, "linear");
-          if ($("#restartBtn").is(":visible"))
-            $("#restartBtn").fadeOut(150, "linear");
-          if ($("#triangle").is(":visible"))
-            $("#triangle").fadeOut(150, "linear");
-          if ($("#square").is(":visible"))
-            $("#square").fadeOut(150, "linear");
-          if ($("#pentagon").is(":visible"))
-            $("#pentagon").fadeOut(150, "linear");
-          if ($("#hexagon").is(":visible"))
-            $("#hexagon").fadeOut(150, "linear");
-          if ($("#openSideBar").is(":visible"))
+        if ($("#restartBtn").is(":visible"))
+          $("#restartBtn").fadeOut(150, "linear");
+        if ($("#triangle").is(":visible"))
+          $("#triangle").fadeOut(150, "linear");
+        if ($("#square").is(":visible")) $("#square").fadeOut(150, "linear");
+        if ($("#pentagon").is(":visible"))
+          $("#pentagon").fadeOut(150, "linear");
+        if ($("#hexagon").is(":visible")) $("#hexagon").fadeOut(150, "linear");
+        if ($("#openSideBar").is(":visible"))
           $(".openSideBar").fadeOut(150, "linear");
 
         canRestart = 0;

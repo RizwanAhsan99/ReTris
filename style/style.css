@@ -617,8 +617,13 @@ body {
   -webkit-transform: translate(calc(-50% - 4px), -1px);
   -moz-transform: translate(calc(-50% - 4px), -1px);
   -ms-transform: translate(calc(-50% - 4px), -1px);
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+  transition: 0.4s;
 }
-
 #iOSBadge {
   margin-top: 10px;
   height: 36px;
@@ -629,6 +634,65 @@ body {
   -webkit-transform: translate(calc(-50% - 4px), 0%);
   -moz-transform: translate(calc(-50% - 4px), 0%);
   -ms-transform: translate(calc(-50% - 4px), 0%);
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+  transition: 0.4s;
+}
+
+#androidBadge:hover {
+  opacity: 0.5;
+}
+
+#iOSBadge:hover {
+  opacity: 0.5;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #authors {

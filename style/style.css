@@ -609,9 +609,10 @@ body {
 
 #androidBadge {
   position: absolute;
-  height: 41px;
-  margin-top: 5px;
-  left: calc(50% - 66px);
+  height: 38px;
+  width: 200px;
+  margin-top: -35px;
+  left: calc(50%);
   transform: translate(calc(-50% - 4px), -1px);
   -webkit-transform: translate(calc(-50% - 4px), -1px);
   -moz-transform: translate(calc(-50% - 4px), -1px);
@@ -619,10 +620,11 @@ body {
 }
 
 #iOSBadge {
-  margin-top: 5px;
-  height: 41px;
+  margin-top: 10px;
+  height: 36px;
+  width: 200px;
   position: absolute;
-  left: calc(50% + 65px);
+  left: calc(50% - 1px);
   transform: translate(calc(-50% - 4px), 0%);
   -webkit-transform: translate(calc(-50% - 4px), 0%);
   -moz-transform: translate(calc(-50% - 4px), 0%);

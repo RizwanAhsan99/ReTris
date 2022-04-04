@@ -620,6 +620,7 @@ body {
 
 #iOSBadge {
   margin-top: 5px;
+  height: 41px;
   position: absolute;
   left: calc(50% + 65px);
   transform: translate(calc(-50% - 4px), 0%);

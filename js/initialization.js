@@ -556,7 +556,3 @@ function handleClickBefore(e) {
     return;
   }
 }
-
-module.exports = () => {
-  return "hello";
-};

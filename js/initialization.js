@@ -385,24 +385,132 @@ function triangleHandler() {
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
+  setTimeout(function () {
+    if (settings.platform == "mobile") {
+      try {
+        document.body.removeEventListener("touchstart", handleTapBefore, false);
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("touchstart", handleTap, false);
+      } catch (e) {}
+
+      document.body.addEventListener("touchstart", handleTap, false);
+    } else {
+      try {
+        document.body.removeEventListener(
+          "mousedown",
+          handleClickBefore,
+          false
+        );
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("mousedown", handleClick, false);
+      } catch (e) {}
+
+      document.body.addEventListener("mousedown", handleClick, false);
+    }
+  }, 5);
 }
 function squareHandler() {
   chooseShape = "square";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
+  setTimeout(function () {
+    if (settings.platform == "mobile") {
+      try {
+        document.body.removeEventListener("touchstart", handleTapBefore, false);
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("touchstart", handleTap, false);
+      } catch (e) {}
+
+      document.body.addEventListener("touchstart", handleTap, false);
+    } else {
+      try {
+        document.body.removeEventListener(
+          "mousedown",
+          handleClickBefore,
+          false
+        );
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("mousedown", handleClick, false);
+      } catch (e) {}
+
+      document.body.addEventListener("mousedown", handleClick, false);
+    }
+  }, 5);
 }
 function pentagonHandler() {
   chooseShape = "pentagon";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
+  setTimeout(function () {
+    if (settings.platform == "mobile") {
+      try {
+        document.body.removeEventListener("touchstart", handleTapBefore, false);
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("touchstart", handleTap, false);
+      } catch (e) {}
+
+      document.body.addEventListener("touchstart", handleTap, false);
+    } else {
+      try {
+        document.body.removeEventListener(
+          "mousedown",
+          handleClickBefore,
+          false
+        );
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("mousedown", handleClick, false);
+      } catch (e) {}
+
+      document.body.addEventListener("mousedown", handleClick, false);
+    }
+  }, 5);
 }
 function hexagonHandler() {
   chooseShape = "hexagon";
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
+  setTimeout(function () {
+    if (settings.platform == "mobile") {
+      try {
+        document.body.removeEventListener("touchstart", handleTapBefore, false);
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("touchstart", handleTap, false);
+      } catch (e) {}
+
+      document.body.addEventListener("touchstart", handleTap, false);
+    } else {
+      try {
+        document.body.removeEventListener(
+          "mousedown",
+          handleClickBefore,
+          false
+        );
+      } catch (e) {}
+
+      try {
+        document.body.removeEventListener("mousedown", handleClick, false);
+      } catch (e) {}
+
+      document.body.addEventListener("mousedown", handleClick, false);
+    }
+  }, 5);
 }
 
 function muteHandler() {

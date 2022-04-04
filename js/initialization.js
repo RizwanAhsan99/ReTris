@@ -406,6 +406,11 @@ function hexagonHandler() {
 }
 
 function muteHandler() {
+  if (muted) {
+    $("#mute").attr("src", "./images/btn_unmute.svg");
+  } else {
+    $("#mute").attr("src", "./images/btn_mute.svg");
+  }
   Howler.mute(muted);
   muted = !muted;
 }

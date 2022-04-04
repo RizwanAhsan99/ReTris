@@ -130,8 +130,8 @@ button:focus {
   display: none;
   position: fixed;
   margin-bottom: 7px;
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   margin-right: 11px;
   z-index: 3000;
   color: #d11c1c;

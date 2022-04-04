@@ -531,7 +531,7 @@ function showHelp() {
       (settings.platform != "mobile"
         ? " Press the down arrow to speed up the block falling. Press the m key to mute/unmute music."
         : "") +
-      " </p><p>Clear blocks and get points by making 3 or more blocks of the same color touch.</p><p>Time left before your combo streak disappears is indicated by <span style='color:#f1c40f;'>the</span> <span style='color:#e74c3c'>colored</span> <span style='color:#3498db'>lines</span> <span style='color:#2ecc71'>on</span> the outer polygon</p> <hr> <p id = 'afterhr'></p><center>By <b>Rizwan Ahsan</b> & <b>Fardeen Afsar</b></center>"
+      " </p><p>Clear blocks and get points by making 3 or more blocks of the same color touch.</p><hr> <p id = 'afterhr'></p><center>By <b>Rizwan Ahsan</b> & <b>Fardeen Afsar</b></center>"
   );
   if (gameState == 1) {
     pause();

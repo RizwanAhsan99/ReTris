@@ -60,7 +60,8 @@ function toggleDevTools() {
 
 var sfx = {
   bg: new Howl({
-    src: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Tetris_theme.ogg",
+    // src: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Tetris_theme.ogg",
+    src: "audio/BG_1.mp3",
     loop: true,
   }),
   block: new Howl({

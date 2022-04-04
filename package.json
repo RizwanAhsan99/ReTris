@@ -2,7 +2,7 @@
   "name": "retris",
   "version": "1.0.0",
   "description": "Open source game",
-  "main": "a.js",
+  "main": "index.html",
   "directories": {
     "test": "test"
   },

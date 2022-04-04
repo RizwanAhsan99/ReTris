@@ -125,8 +125,8 @@ button:focus {
 	z-index:3000;
 	color:#d11c1c;
 	cursor:pointer;
-	right: 0;
-	top: 0;
+	left: 37%;
+	bottom: 0;
 	z-index:99;
 }
 #square {
@@ -139,8 +139,8 @@ button:focus {
 	z-index:3000;
 	color:#d11c1c;
 	cursor:pointer;
-	right: 0;
-	top: 10%;
+	left: 44%;
+	bottom: 0;
 	z-index:99;
 }
 #pentagon {
@@ -153,8 +153,8 @@ button:focus {
 	z-index:3000;
 	color:#d11c1c;
 	cursor:pointer;
-	right: 0;
-	top: 20%;
+	left: 51%;
+	bottom: 0;
 	z-index:99;
 }
 #hexagon {
@@ -167,8 +167,8 @@ button:focus {
 	z-index:3000;
 	color:#d11c1c;
 	cursor:pointer;
-	right: 0;
-	top: 30%;
+	left: 58%;
+	bottom: 0;
 	z-index:99;
 }
 

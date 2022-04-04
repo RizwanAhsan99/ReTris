@@ -240,7 +240,10 @@ function updateHighScores() {
 
 var pausable = true;
 function pause(o) {
-  TogglePauseAudio(sfx.bg);
+  // TogglePauseAudio(sfx.bg);
+  sfx.hex.stop();
+  sfx.block.stop();
+  sfx.match.stop();
   if (gameState == 0 || gameState == 2 || !pausable) {
     return;
   }
@@ -262,6 +265,7 @@ function pause(o) {
     $("#square").fadeOut(300, "linear");
     $("#pentagon").fadeOut(300, "linear");
     $("#hexagon").fadeOut(300, "linear");
+    $("#mute").fadeOut(300, "linear");
     $("#buttonCont").fadeOut(300, "linear");
     if ($("#helpScreen").is(":visible")) {
       $("#helpScreen").fadeOut(300, "linear");
@@ -281,6 +285,7 @@ function pause(o) {
     $("#square").fadeIn(300, "linear");
     $("#pentagon").fadeIn(300, "linear");
     $("#hexagon").fadeIn(300, "linear");
+    $("#mute").fadeIn(300, "linear");
     $("#buttonCont").fadeIn(300, "linear");
     $(".helpText").fadeIn(300, "linear");
     if (message == "paused") {

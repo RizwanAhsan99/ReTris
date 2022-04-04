@@ -87,6 +87,7 @@ function resumeGame() {
   $("#square").hide();
   $("#pentagon").hide();
   $("#hexagon").hide();
+  $("#mute").hide();
 
   importing = 0;
   startTime = Date.now();
@@ -124,6 +125,7 @@ function checkVisualElements(arg) {
   if (!$("#square").is(":visible")) $("#square").fadeOut(150, "linear");
   if (!$("#pentagon").is(":visible")) $("#pentagon").fadeOut(150, "linear");
   if (!$("#hexagon").is(":visible")) $("#hexagon").fadeOut(150, "linear");
+  if (!$("#mute").is(":visible")) $("#mute").fadeOut(150, "linear");
   if ($("#buttonCont").is(":visible")) $("#buttonCont").fadeOut(150, "linear");
 }
 
@@ -135,13 +137,12 @@ function hideUIElements() {
   $("#square").hide();
   $("#pentagon").hide();
   $("#hexagon").hide();
+  $("#mute").hide();
 }
-
+var muted = true;
 function init(b) {
+  Howler.stop();
   sfxBgID = sfx.bg.play();
-  sfx.hex.stop();
-  sfx.match.stop();
-  sfx.block.stop();
   Howler.mute(false);
   if (settings.ending_block && b == 1) {
     return;
@@ -192,6 +193,7 @@ function init(b) {
   $("#square").hide();
   $("#pentagon").hide();
   $("#hexagon").hide();
+  $("#mute").hide();
   $("#pauseBtn").show();
   if (saveState.hex !== undefined) gameState = 1;
 
@@ -369,6 +371,7 @@ function setStartScreen() {
   $("#square").show(); // NEW ADDED
   $("#pentagon").show(); // NEW ADDED
   $("#hexagon").show(); // NEW ADDED
+  $("#mute").show(); // NEW ADDED
 
   gameState = 0;
   requestAnimFrame(animLoop);
@@ -421,6 +424,7 @@ function animLoop() {
         if ($("#pentagon").is(":visible"))
           $("#pentagon").fadeOut(150, "linear");
         if ($("#hexagon").is(":visible")) $("#hexagon").fadeOut(150, "linear");
+        if ($("#mute").is(":visible")) $("#mute").fadeOut(150, "linear");
         if ($("#openSideBar").is(":visible"))
           $(".openSideBar").fadeOut(150, "linear");
 

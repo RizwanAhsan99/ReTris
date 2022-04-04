@@ -85,6 +85,13 @@ function addKeyListeners() {
       pause();
     },
   });
+  keypress.register_combo({
+    keys: "m",
+    on_keydown: function () {
+      Howler.mute(muted);
+      muted = !muted;
+    },
+  });
 
   keypress.register_combo({
     keys: "space",

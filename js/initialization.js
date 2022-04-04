@@ -183,6 +183,12 @@ function initialize(a) {
     } else {
       $("#hexagon").on("mousedown", hexagonHandler);
     }
+    $("#mute").off();
+    if (settings.platform == "mobile") {
+      $("#mute").on("touchstart", muteHandler);
+    } else {
+      $("#mute").on("mousedown", muteHandler);
+    }
 
     document.addEventListener(
       "touchmove",
@@ -397,6 +403,11 @@ function hexagonHandler() {
   init(1);
   canRestart = false;
   $("#gameoverscreen").fadeOut();
+}
+
+function muteHandler() {
+  Howler.mute(muted);
+  muted = !muted;
 }
 
 function handlePause() {

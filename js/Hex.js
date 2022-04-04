@@ -25,6 +25,7 @@ function Hex(sideLength, sides, hexAngle) {
     this.blocks.push([]);
   }
 
+  //Shakes the base shape when new block is attached to it
   this.shake = function (obj) {
     //lane as in particle lane
     var angle = 30 + obj.lane * 60;
@@ -69,6 +70,7 @@ function Hex(sideLength, sides, hexAngle) {
     block.checked = 1;
   };
 
+  //To check if block collides with the base shape or on top of another block
   this.doesBlockCollide = function (block, position, tArr) {
     if (block.settled) {
       return;
@@ -132,6 +134,7 @@ function Hex(sideLength, sides, hexAngle) {
             arr[arr.length - 1].height <=
           0
         ) {
+          //Sound for block impact on another block
           sfx.block.play(); //block on block
 
           block.distFromHex =
@@ -148,6 +151,7 @@ function Hex(sideLength, sides, hexAngle) {
               Math.sqrt(hexShape().distSq) <=
           0
         ) {
+          //Sound for block impact on the base shape
           sfx.block.play(); //block on ground
 
           block.distFromHex =
@@ -158,6 +162,7 @@ function Hex(sideLength, sides, hexAngle) {
     }
   };
 
+  //Rotates the base shape clockwise or counter-clockwise
   this.rotate = function (steps) {
     sfx.hex.play();
     if (
@@ -223,10 +228,11 @@ function Hex(sideLength, sides, hexAngle) {
       this.angle += this.angularVelocity;
     }
 
+    //Draws the base shape
     drawPolygon(
       this.x + gdx,
       this.y + gdy + this.dy,
-      this.sides,
+      this.sides, //Number of sides on the polygon
       this.sideLength - hexShape().offset, //CHANGE this.sideLength added 75
       this.angle,
       arrayToColor(this.fillColor),
@@ -236,6 +242,7 @@ function Hex(sideLength, sides, hexAngle) {
   };
 }
 
+//Converts the passed array to rgb vale
 function arrayToColor(arr) {
   return "rgb(" + arr[0] + "," + arr[1] + "," + arr[2] + ")";
 }

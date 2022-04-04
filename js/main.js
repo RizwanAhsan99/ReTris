@@ -139,6 +139,10 @@ function hideUIElements() {
 
 function init(b) {
   sfxBgID = sfx.bg.play();
+  sfx.hex.stop();
+  sfx.match.stop();
+  sfx.block.stop();
+  Howler.mute(false);
   if (settings.ending_block && b == 1) {
     return;
   }
@@ -397,9 +401,8 @@ function animLoop() {
         var saveState = localStorage.getItem("saveState") || "{}";
         saveState = JSONfn.parse(saveState);
         gameState = 2;
-
         sfx.bg.stop();
-
+        Howler.mute(true);
         setTimeout(function () {
           enableRestart();
         }, 150);

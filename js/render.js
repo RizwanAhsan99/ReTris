@@ -96,7 +96,7 @@ function renderBeginningText() {
   ) {
     mob = true;
     input_text = "Tap the screen's left and right";
-    action_text = "sides to rotate the hexagon";
+    action_text = `sides to rotate the ${hexShape().text}`;
     score_text = "Match 3+ blocks to score";
     fontSize = 35;
   } else {

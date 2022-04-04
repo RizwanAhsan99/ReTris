@@ -295,57 +295,49 @@ button:focus {
   #triangle {
     display: none;
     position: fixed;
-    margin-bottom: 7px;
-    width: 72px;
-    height: 72px;
-    margin-right: 11px;
+    width: 50px;
+    height: 50px;
     z-index: 3000;
     color: #d11c1c;
     cursor: pointer;
-    left: 2%;
-    bottom: 80%;
+    left: 3%;
+    bottom: 75%;
     z-index: 99;
   }
   #square {
     display: none;
     position: fixed;
-    margin-bottom: 7px;
-    width: 72px;
-    height: 72px;
-    margin-right: 11px;
+    width: 50px;
+    height: 50px;
     z-index: 3000;
     color: #d11c1c;
     cursor: pointer;
-    left: 28%;
-    bottom: 80%;
+    left: 31%;
+    bottom: 75%;
     z-index: 99;
   }
   #pentagon {
     display: none;
     position: fixed;
-    margin-bottom: 7px;
-    width: 72px;
-    height: 72px;
-    margin-right: 11px;
+    width: 50px;
+    height: 50px;
     z-index: 3000;
     color: #d11c1c;
     cursor: pointer;
-    left: 55%;
-    bottom: 80%;
+    left: 59%;
+    bottom: 75%;
     z-index: 99;
   }
   #hexagon {
     display: none;
     position: fixed;
-    margin-bottom: 7px;
-    width: 72px;
-    height: 72px;
-    margin-right: 11px;
+    width: 50px;
+    height: 50px;
     z-index: 3000;
     color: #d11c1c;
     cursor: pointer;
-    left: 80%;
-    bottom: 80%;
+    left: 85%;
+    bottom: 75%;
     z-index: 99;
   }
 

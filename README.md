@@ -1,6 +1,6 @@
 # ReTris
 
-ReTris is an open source addictive puzzle game inspired by Tetris. Play it at https://retris.onrender.com/
+ReTris is an open source addictive puzzle game inspired by Tetris. Play it at [https://re-tris.vercel.app/](https://re-tris.vercel.app/)
 
 This game was built upon the existing game [Hextris](https://hextris.io/). The main differences of our version of the game are, we added more features to the Hextris game.
 The features are:
